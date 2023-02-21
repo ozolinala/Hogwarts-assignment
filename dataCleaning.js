@@ -14,5 +14,34 @@
 
 // You don't have to use the images in this version, but find a way to extract/calculate the image filename from the student name. You will find a pattern!
 
-console.table
+
+//  statement waits for the page to finish loading before calling the start() function.
+window.addEventListener("DOMContentLoaded", start); 
+
+const url = "https://petlatkea.dk/2021/hogwarts/students.json";
+
+
+// an array that will contain objects representing each student
+let allStudents = [];
+
+// an object that serves as a template for each student object
+const Student = {
+    firstName: "",
+    lastName: "",
+    middleName: "",
+    nickName: "",
+    image: "",
+    house: "",
+  };
+
+//   fetch the data, call the prepareObjects() function for each student in the data using
+ function start(){
+
+  }
+
+//   trimm whitespace, capitalize names and nicknames, create a new Student object, and then push the new object into the allStudents array 
+  function prepareObjects(){
+
+  }
+
 
