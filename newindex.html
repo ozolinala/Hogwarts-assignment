@@ -4,11 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/kth7gmp.css">
     <link rel="stylesheet" href="style.css">
     <title>Hogwards</title>
 </head>
 <body>
-    <h1>Hogwarts Students list</h1>
+    <h1>Hogwarts Student list</h1>
+    <section class="filter-buttons">
+      <div class="filters">
+        <button class="filter" data-action="filter" data-filter="Gryffindor">Gryffindor</button>
+        <button class="filter" data-action="filter" data-filter="Ravenclaw">Ravenclaw</button>
+        <button class="filter" data-action="filter" data-filter="Slytherin">Slytherin</button>
+        <button class="filter" data-action="filter" data-filter="Hufflepuff">Hufflepuff</button>
+        <button class="filter" data-action="filter" data-filter="all">Enrolled Students</button>
+        <button class="filter" data-action="filter" data-filter="expelled">Expelled Students</button>
+      </div>
+
     <table id="list">
         <thead>
           <tr>       
@@ -27,11 +38,11 @@
           <td data-field="image">
             <img src="" alt=""/>
           </td>
-          <td data-field="firstName">FIRST NAME</td>
-          <td data-field="lastName">LAST NAME</td>
-          <td data-field="middleName">MIDDLE NAME</td>
-          <td data-field="nickName">NICK NAME</td>
-          <td data-field="house">HOUSE</td>
+          <td data-field="firstName"></td>
+          <td data-field="lastName"></td>
+          <td data-field="middleName"></td>
+          <td data-field="nickName"></td>
+          <td data-field="house"></td>
         </tr>
       </template>
       <script src="data.js"></script>

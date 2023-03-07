@@ -1,0 +1,73 @@
+body{
+    background-color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    font-family: "new-kansas", sans-serif;
+font-weight: 600;
+font-style: normal;
+font-size: 45px;
+}
+p{
+    font-family: "new-kansas", sans-serif;
+font-weight: 300;
+}
+
+[data-action] {
+    cursor: pointer;
+  }
+  
+  #sorting th.sortby {
+    text-decoration: underline;
+  }
+  
+  #list {
+    border-collapse: collapse;
+  }
+  #list img{
+    border-radius: 20%;
+  }
+  #list tbody tr td {
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  
+  #list tbody tr:nth-child(odd) td {
+    background-color:#D8ECFF;
+    border-right: rgb(240, 249, 255) 1px dotted;
+  }
+  
+  #list tbody tr:nth-child(even) td {
+    background-color: #E1E8FF;
+    border-right: rgb(171, 219, 252) 1px dotted;
+  }
+/* FILTERS */
+  .filter-buttons {
+    display: flex;
+    gap: 1rem;
+    width: 68%;
+  }
+  
+  .filter-buttons button {
+    padding: 2vh;
+    margin: 0.5vh;
+    width: 100%;
+    background-color: white;
+    border: 0;
+    border-radius: 5px;
+  }
+  
+  .filter-buttons button:hover {
+    transform: scale(101%);
+    opacity: 0.8;
+  }
+  
+  .filter-buttons button:active {
+    background-color:  #E1E8FF;
+  }
+  
+  .filter-buttons button:focus {
+    background-color: #E1E8FF;
+  }
