@@ -4,11 +4,14 @@
 window.addEventListener("DOMContentLoaded", start); 
 
 const url = "https://petlatkea.dk/2021/hogwarts/students.json";
-const urlFamilies = "https://petlatkea.dk/2021/hogwarts/families.json";
+const familiesUrl = "https://petlatkea.dk/2021/hogwarts/families.json";
+
 // an array that will contain objects representing each student
-let halfBlood = [];
-let pureBlood = [];
+let halfB = [];
+let pureB = [];
 let allStudents = [];
+let filteredArray;
+
 
 // an object that serves as a template for each student object
 const Student = {
@@ -22,18 +25,18 @@ const Student = {
     blood:"",
   };
 
-//   fetch the data, call the prepareObjects() function for each student in the data using
+//   fetch the data, call the prepareObjects() function for each student in the data 
 function start() {
   console.log("lets begin");
   loadJson1();
 }
 
 async function loadJson1() {
-  const resp = await fetch(urlFamilies);
+  const resp = await fetch(familiesUrl);
   const data = await resp.json();
   console.log("Blood data loaded");
-  halfBlood = data.half;
-  pureBlood = data.pure;
+  halfB = data.half;
+  pureB = data.pure;
 
   loadJson2();
 }
@@ -47,8 +50,9 @@ async function loadJson2() {
 function prepareObjects(jsonData) {
   allStudents = jsonData.map(prepareObject);
   filteredArray = allStudents;
-  buildList();
 }
+
+
 //   trimm whitespace, capitalize names and nicknames, create a new Student object, and then push the new object into the allStudents array 
 
 function prepareObject(studentObject) {
@@ -87,6 +91,7 @@ function prepareObject(studentObject) {
 // ------------------------IMAGES------------------
 
   function getPortrait(fullname) {
+    console.log("Getting Image")
     let firstName = fullname.substring(0, fullname.indexOf(" ")).toLowerCase();
     let lastName = fullname.substring(fullname.lastIndexOf(" ") + 1).toLowerCase();
     let urlImage = lastName + "_" + firstName.charAt(0) + ".png";
@@ -94,6 +99,7 @@ function prepareObject(studentObject) {
       urlImage = "empty.png";
     }
     if (lastName === "patil") {
+      console.log("Searching for Patil sisters");
       urlImage = lastName + "_" + firstName + ".png";
     }
   
@@ -106,24 +112,6 @@ function prepareObject(studentObject) {
     }
   }
 
-  for (let datum of data) {
-    const td = document.createElement("td");
-    if (datum === student.portrait) {
-      const img = document.createElement("img");
-      img.src = `./images/${datum}`;
-      img.alt = `img`;
-      td.appendChild(img);
-    } else if (datum === student.house) {
-      const img = document.createElement("img");
-      img.src = `./images/${datum}.png`; // assuming the house image file names end with ".png"
-      img.alt = `img`;
-      td.appendChild(img);
-    } else {
-      td.textContent = datum;
-    }
-    row.appendChild(td);
-  }
-
 
   function displayList() {
     // clear the list
@@ -133,21 +121,23 @@ function prepareObject(studentObject) {
     allStudents.forEach(displayStudent);
   }
   
-  function displayStudent(alumni) {
+  function displayStudent(wizards) {
     // create clone
-    const clone = document.querySelector("template#alumni").content.cloneNode(true);
+    const clone = document.querySelector("template#wizards").content.cloneNode(true);
   
     // set clone data
 
-    clone.querySelector("[data-field=firstName]").textContent = alumni.firstName;
-    clone.querySelector("[data-field=lastName]").textContent = alumni.lastName;
-    clone.querySelector("[data-field=middleName]").textContent = alumni.middleName;
-    clone.querySelector("[data-field=nickName]").textContent = alumni.nickName;
-    clone.querySelector("[data-field=house]").textContent = alumni.house;
-         clone.querySelector("[data-field=image]").textContent = alumni.image;
-        //  clone.querySelector("[data-field=image] img").src = `images/${alumni.image}`;
+    clone.querySelector("[data-field=firstName]").textContent = wizards.firstName;
+    clone.querySelector("[data-field=lastName]").textContent = wizards.lastName;
+    clone.querySelector("[data-field=middleName]").textContent = wizards.middleName;
+    clone.querySelector("[data-field=nickName]").textContent = wizards.nickName;
+    clone.querySelector("[data-field=house]").textContent = wizards.house;
+         clone.querySelector("[data-field=image] img").src = `images/${wizards.image}`;
     // append clone to list
     document.querySelector("#list tbody").appendChild(clone);
   }
 
-
+// TODO: FILTERING
+// TODO: SORTING
+// TODO: INQUISITIONAL LIST
+// TODO: HACKING
