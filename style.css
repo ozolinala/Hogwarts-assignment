@@ -23,9 +23,11 @@ font-weight: 300;
   
   #list {
     border-collapse: collapse;
+    font-size: 15px;
   }
   #list img{
     border-radius: 20%;
+    zoom:55%;
   }
   #list tbody tr td {
     padding-left: 24px;

@@ -9,17 +9,38 @@
     <title>Hogwards</title>
 </head>
 <body>
+  <header>
     <h1>Hogwarts Student list</h1>
-    <section class="filter-buttons">
+    <section id="filter-buttons">
       <div class="filters">
         <button class="filter" data-action="filter" data-filter="Gryffindor">Gryffindor</button>
         <button class="filter" data-action="filter" data-filter="Ravenclaw">Ravenclaw</button>
         <button class="filter" data-action="filter" data-filter="Slytherin">Slytherin</button>
         <button class="filter" data-action="filter" data-filter="Hufflepuff">Hufflepuff</button>
-        <button class="filter" data-action="filter" data-filter="all">Enrolled Students</button>
+        <button class="filter" data-action="filter" data-filter="enrolled">Enrolled Students</button>
         <button class="filter" data-action="filter" data-filter="expelled">Expelled Students</button>
+        <button class="filter" data-action="filter" data-filter="*">All Students</button>
       </div>
-
+      <!-- <p>
+        Sort:
+        <button class="sort" data-action="sort" data-sort="house">House</button>
+        <button class="sort" data-action="sort" data-sort="firstName">First Name</button>
+        <button class="sort" data-action="sort" data-sort="lastName">Last Name</button>
+        <button class="sort" data-action="sort" data-sort="prefect">Prefect</button>
+        <button class="sort" data-action="sort" data-sort="squad">Inquisitorial Squad</button>
+      </p> -->
+      <div class="search-container">
+        <form class="form">
+          <input
+            id="search-bar"
+            type="text"
+            class="input"
+            placeholder="Search.."
+          />
+          <button id="clear" class="clear-search">clear</button>
+        </form>
+      </div>
+    </header>
     <table id="list">
         <thead>
           <tr>       
@@ -41,8 +62,14 @@
           <td data-field="firstName"></td>
           <td data-field="lastName"></td>
           <td data-field="middleName"></td>
-          <td data-field="nickName"></td>
+          <td data-field="nickName"></td> 
+          <!-- <td data-field="gender"></td> -->
           <td data-field="house"></td>
+          <!-- <td data-field="blood">BLOOD</td>
+          <td data-field="prefect">🏆</td>
+          <td data-field="squad">⭐</td>
+          <td data-field="enrolled">ENROLLED</td>
+          <td data-field="expelled">EXPELLED</td> -->
         </tr>
       </template>
       <script src="data.js"></script>
