@@ -13,12 +13,13 @@
     <h1>Hogwarts Student list</h1>
     <section id="filter-buttons">
       <div class="filters">
-        <button class="filter" data-action="filter" data-filter="Gryffindor">Gryffindor</button>
-        <button class="filter" data-action="filter" data-filter="Ravenclaw">Ravenclaw</button>
-        <button class="filter" data-action="filter" data-filter="Slytherin">Slytherin</button>
-        <button class="filter" data-action="filter" data-filter="Hufflepuff">Hufflepuff</button>
-        <button class="filter" data-action="filter" data-filter="enrolled">Enrolled Students</button>
-        <button class="filter" data-action="filter" data-filter="expelled">Expelled Students</button>
+        <button class="filter" data-action="filter" data-filter="gryffindor">Gryffindor</button>
+        <button class="filter" data-action="filter" data-filter="ravenclaw">Ravenclaw</button>
+        <button class="filter" data-action="filter" data-filter="slytherin">Slytherin</button>
+        <button class="filter" data-action="filter" data-filter="hufflepuff">Hufflepuff</button>
+        <button class="filter" data-action="filter" data-filter="prefect">Starred</button>
+        <button class="filter" data-action="filter" data-filter="inquisitor">Inquisitor</button>
+        <button class="filter" data-action="filter" data-filter="expelled">Expelled</button>
         <button class="filter" data-action="filter" data-filter="*">All Students</button>
       </div>
       <!-- <p>
@@ -31,28 +32,30 @@
       </p> -->
       <div class="search-container">
         <form class="form">
-          <input
-            id="search"
-            type="text"
-            class="input"
-            placeholder="Search.."
-          />
-          <button id="clear" class="clear-search">clear</button>
-        </form>
+          <input 
+          type="text" 
+          id="search" 
+          onkeyup="searchFunction()" 
+          placeholder="Search..">
+          <button id="clear" class="clear-search">Clear Search</button>
       </div>
+   
     </header>
     <table id="list">
-        <thead>
-          <tr>       
-            <th>Image</th>
-            <th>First name</th> 
-             <th>Middle name</th>
-            <th>Last name</th>
-            <th>Nick name</th>
-            <th>House</th>
-          </tr>
+      <thead>
+        <tr id="sorting">
+          <th data-action="sort" data-sort-direction="asc" data-sort="image"></th>
+          <th data-action="sort" data-sort-direction="asc" data-sort="name">Name</th>
+          <th data-action="sort" data-sort-direction="asc" data-sort="middleName">Middle Name</th>
+          <th data-action="sort" data-sort-direction="asc" data-sort="lastName">Last Name</th>
+          <th data-action="sort" data-sort-direction="asc" data-sort="nickName">Nick Name</th>
+          <th data-action="sort" data-sort-direction="asc" data-sort="house">House</th>
+          <!-- <th data-action="sort" data-sort-direction="asc" data-sort="star">Star</th> -->
+        </tr>
         </thead>
-        <tbody></tbody>
+        <tbody>
+          <!-- student template here -->
+        </tbody>
       </table>
       <template id="student">
         <tr> 

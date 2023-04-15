@@ -3,8 +3,8 @@
 "use strict"
 window.addEventListener("DOMContentLoaded", start); 
 
-const url = "https://petlatkea.dk/2021/hogwarts/students.json";
-const familiesUrl = "https://petlatkea.dk/2021/hogwarts/families.json";
+// const url = "https://petlatkea.dk/2021/hogwarts/students.json";
+// const familiesUrl = "https://petlatkea.dk/2021/hogwarts/families.json";
 
 // an array that will contain objects representing each student
 let halfB = [];
@@ -172,7 +172,24 @@ console.log(clone);
     // append clone to list
     document.querySelector("#list tbody").appendChild(clone);
   }
+// SEARCH 
+function searchList() {
+  const searchWord = document.querySelector("#search").value.toLowerCase();
+  const searchedList = allStudents.filter(isSearched);
 
+  function isSearched(student) {
+    if (student.lastName == undefined) {
+      const fullName = `${student.firstName}`.toLowerCase();
+
+      return fullName.includes(searchWord);
+    } else {
+      const fullName = `${student.firstName} ${student.lastName}`.toLowerCase();
+      return fullName.includes(searchWord);
+    }
+  }
+
+  displayList(searchedList);
+}
 //  ------------------- FILTERING ---------------------
 
 // tried to filter like the animal base
