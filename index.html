@@ -4,34 +4,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/kth7gmp.css">
     <link rel="stylesheet" href="style.css">
-    <title>Hogwards</title>
+    <title>Hogwarts</title>
 </head>
 <body>
-    <h1>Students list</h1>
+  <header>
+    <h1>Hogwarts Student list</h1>
+    <section id="filter-buttons">
+      <div class="filters">
+        <button class="filter" data-action="filter" data-filter="gryffindor">Gryffindor</button>
+        <button class="filter" data-action="filter" data-filter="ravenclaw">Ravenclaw</button>
+        <button class="filter" data-action="filter" data-filter="slytherin">Slytherin</button>
+        <button class="filter" data-action="filter" data-filter="hufflepuff">Hufflepuff</button>
+        <button class="filter" data-action="filter" data-filter="prefect">Starred</button>
+        <button class="filter" data-action="filter" data-filter="inquisitor">Inquisitor</button>
+        <button class="filter" data-action="filter" data-filter="expelled">Expelled</button>
+        <button class="filter" data-action="filter" data-filter="*">All Students</button>
+      </div>
+      <div class="search-container">
+        <form class="form">
+          <input 
+          type="text" 
+          id="search" 
+          onkeyup="searchFunction()" 
+          placeholder="Search..">
+          <button id="clear" class="clear-search">Clear Search</button>
+      </div>
+
+    </header>
     <table id="list">
-        <thead>
-          <tr>       
-            <th>Image</th>
-            <th>First name</th>
-            <th>Last name</th>
-            <th>Middle name</th>
-            <th>Nick name</th>
-            <th>House</th>
-          </tr>
+      <thead>
+        <tr id="sorting">
+          <th data-action="sort" data-sort-direction="asc" data-sort="image"></th>
+          <th data-action="sort" data-sort-direction="asc" data-sort="name">Name</th>
+          <th data-action="sort" data-sort-direction="asc" data-sort="middleName">Middle Name</th>
+          <th data-action="sort" data-sort-direction="asc" data-sort="lastName">Last Name</th>
+          <th data-action="sort" data-sort-direction="asc" data-sort="nickName">Nick Name</th>
+          <th data-action="sort" data-sort-direction="asc" data-sort="house">House</th>
+          <!-- <th data-action="sort" data-sort-direction="asc" data-sort="star">Star</th> -->
+        </tr>
         </thead>
-        <tbody></tbody>
+        <tbody>
+          <!-- student template here -->
+        </tbody>
       </table>
-      <template id="alumni">
+      <template id="student">
         <tr> 
-          <td data-field="image">IMAGE</td>
-          <td data-field="firstName">FIRST NAME</td>
-          <td data-field="lastName">LAST NAME</td>
-          <td data-field="middleName">MIDDLE NAME</td>
-          <td data-field="nickName">NICK NAME</td>
-          <td data-field="house">HOUSE</td>
+          <td data-field="image">
+            <img src="" alt=""/>
+          </td>
+          <td data-field="firstName"></td> 
+           <td data-field="middleName"></td>
+          <td data-field="lastName"></td>
+          <td data-field="nickName"></td> 
+          <!-- <td data-field="gender"></td> -->
+          <td data-field="house"></td>
+          <!-- <td data-field="blood">BLOOD</td>
+          <td data-field="prefect">🏆</td>
+          <td data-field="squad">⭐</td>
+          <td data-field="enrolled">ENROLLED</td>
+          <td data-field="expelled">EXPELLED</td> -->
         </tr>
       </template>
-      <script src="dataCleaning.js"></script>
+      <script src="newJs.js"></script>
 </body>
 </html>
