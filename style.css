@@ -71,31 +71,19 @@ font-weight: 300;
     background-color: #E1E8FF;
     border-right: rgb(171, 219, 252) 1px dotted;
   }
-/* FILTERS */
-  .filter-buttons {
-    display: flex;
-    gap: 1rem;
-    width: 68%;
-  }
-  
-  .filter-buttons button {
-    padding: 2vh;
-    margin: 0.5vh;
-    width: 100%;
-    background-color: white;
-    border: 0;
-    border-radius: 5px;
-  }
-  
-  .filter-buttons button:hover {
-    transform: scale(101%);
-    opacity: 0.8;
-  }
-  
-  .filter-buttons button:active {
-    background-color:  #E1E8FF;
-  }
-  
-  .filter-buttons button:focus {
-    background-color: #E1E8FF;
-  }
+/* Style for filter buttons */
+.filter {
+  padding: 10px;
+  background-color: #CCDDF2;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Style for search bar */
+.search-container input[type="text"],
+.search-container button {
+  padding: 10px;
+  border-radius: 10px;
+  border:none;
+}
