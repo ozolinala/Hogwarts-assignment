@@ -1,4 +1,4 @@
-# Hogwarts-Student-List
+# Hogwarts Student List
 
 Assignment for the Front End elective at KEA, theme Just JavaScript.
 Goal of the Assignment was to create a Student List with:
