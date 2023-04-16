@@ -92,6 +92,7 @@ function prepareObject(jsonObject) {
     return fullname;
   }
 
+
 // ------------------------IMAGES------------------
 
   function getPortrait(fullname) {
@@ -211,7 +212,7 @@ function selectFilter(event) {
   function isExpelled(student) {
     return student.expelled === true;
   }
-// SORTING
+// SORTING (does not function perfectly for the firstName)
 
 function selectSort(event) {
     const sortBy = event.target.dataset.sort;
@@ -252,6 +253,8 @@ function selectSort(event) {
   }
 
 // TODO: STAR AND INQUISITIONAL LIST
+
+// BLOOD TYPES
 
 // SEARCH INPUT
 
