@@ -52,7 +52,7 @@ function start() {
 
   async function prepareObjects(jsonData) {
     allStudents = jsonData.map(prepareObject);
-
+createList();
   }
   
 
@@ -92,6 +92,7 @@ function prepareObject(jsonObject) {
     return fullname;
   }
 
+  
 
 // ------------------------IMAGES------------------
 
@@ -146,6 +147,23 @@ function displayStudent( student ) {
     clone.querySelector("[data-field=nickName]").textContent = student.nickName;
     clone.querySelector("[data-field=house]").textContent = student.house;
          clone.querySelector("[data-field=image] img").src = `images/${student.image}`;
+
+if (student.prefect === true) {
+    clone.querySelector("[data-field=prefect]").textContent = "⭐";
+} else {
+    clone.querySelector("[data-field=prefect]").textContent = "☆";
+
+}
+
+clone.querySelector("[data-field=prefect]").addEventListener("click", clickPrefect);
+function clickPrefect(){
+if(student.prefect === true){
+    student.prefect = false;
+} else {
+    student.prefect = true;
+}
+createList();
+}
 
     // append clone to list
     document.querySelector("#list tbody").appendChild( clone );
@@ -252,7 +270,6 @@ function selectSort(event) {
     return sortedList;
   }
 
-// TODO: STAR AND INQUISITIONAL LIST
 
 // BLOOD TYPES
 
@@ -268,6 +285,7 @@ function selectSort(event) {
   }
   
 // TODO: POP-UP
+
 
 // TODO: EXPELLING
 

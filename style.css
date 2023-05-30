@@ -57,20 +57,20 @@ font-weight: 300;
     zoom:55%;
   }
   #list tbody tr td {
-    padding-left: 24px;
-    padding-right: 24px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-left: 3vh;
+    padding-right: 3vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
   }
-  
+ 
   #list tbody tr:nth-child(odd) td {
     background-color:#D8ECFF;
-    border-right: rgb(240, 249, 255) 1px dotted;
+    /* border-right: rgb(240, 249, 255) 1px dotted; */
   }
   
   #list tbody tr:nth-child(even) td {
     background-color: #E1E8FF;
-    border-right: rgb(171, 219, 252) 1px dotted;
+    /* border-right: rgb(171, 219, 252) 1px dotted; */
   }
 /* Style for filter buttons */
 .filter {
@@ -88,3 +88,26 @@ font-weight: 300;
   border-radius: 10px;
   border:none;
 }
+
+/* pop-up */
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.popup-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 700px;
+}
+

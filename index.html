@@ -21,6 +21,7 @@
         <button class="filter" data-action="filter" data-filter="prefect">Starred</button>
         <button class="filter" data-action="filter" data-filter="inquisitor">Inquisitor</button>
         <button class="filter" data-action="filter" data-filter="expelled">Expelled</button>
+        <button class="filter" data-action="filter" data-filter="enrolled">Enrolled</button>
         <button class="filter" data-action="filter" data-filter="*">All Students</button>
       </div>
       <div class="search-container">
@@ -37,21 +38,27 @@
     <table id="list">
       <thead>
         <tr id="sorting">
+          <th data-action="sort" data-sort-direction="asc" data-sort="prefect">Prefect</th>
           <th data-action="sort" data-sort-direction="asc" data-sort="image"></th>
           <th data-action="sort" data-sort-direction="asc" data-sort="name">Name</th>
           <th data-action="sort" data-sort-direction="asc" data-sort="middleName">Middle Name</th>
           <th data-action="sort" data-sort-direction="asc" data-sort="lastName">Last Name</th>
           <th data-action="sort" data-sort-direction="asc" data-sort="nickName">Nick Name</th>
           <th data-action="sort" data-sort-direction="asc" data-sort="house">House</th>
-          <!-- <th data-action="sort" data-sort-direction="asc" data-sort="star">Star</th> -->
         </tr>
         </thead>
         <tbody>
           <!-- student template here -->
         </tbody>
       </table>
+      <div class="popup">
+        <div class="popup-content">
+          <!-- student info goes here -->
+        </div>
+      </div>
       <template id="student">
         <tr> 
+          <td data-field="prefect">☆</td>
           <td data-field="image">
             <img src="" alt=""/>
           </td>
@@ -61,9 +68,9 @@
           <td data-field="nickName"></td> 
           <!-- <td data-field="gender"></td> -->
           <td data-field="house"></td>
-          <!-- <td data-field="blood">BLOOD</td>
-          <td data-field="prefect">🏆</td>
-          <td data-field="squad">⭐</td>
+          <!-- <td data-field="blood">BLOOD</td> -->
+          
+          <!-- <td data-field="squad">🏆</td>
           <td data-field="enrolled">ENROLLED</td>
           <td data-field="expelled">EXPELLED</td> -->
         </tr>
